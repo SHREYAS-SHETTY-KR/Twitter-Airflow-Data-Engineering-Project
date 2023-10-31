@@ -17,30 +17,31 @@ These services are integral to our project and will collectively support our dat
 ## Project Execution Flow
 
 ### Data Extraction and Transformation
-**Data Extraction from Twitter API :** The project begins with the extraction of data from the Twitter API using a custom ETL script. This script retrieves data based on specific queries or criteria.
 
-**Data Transformation :** The extracted data, typically in JSON format, is transformed into a structured DataFrame (DF) format. This transformation includes cleaning, filtering, and organizing the data for further processing.
+* **Data Extraction from Twitter API :** The project begins with the extraction of data from the Twitter API using a custom ETL script. This script retrieves data based on specific queries or criteria.
 
-**Local Data Storage :** The transformed data is temporarily stored locally, serving as an intermediate repository.
+* **Data Transformation :** The extracted data, typically in JSON format, is transformed into a structured DataFrame (DF) format. This transformation includes cleaning, filtering, and organizing the data for further processing.
+
+* **Local Data Storage :** The transformed data is temporarily stored locally, serving as an intermediate repository.
 
 ### AWS EC2 and Airflow Deployment
 
-**Creating an EC2 Instance :** An Amazon EC2 instance is launched on AWS. This instance provides a scalable and cloud-based environment for executing data processing tasks.
+* **Creating an EC2 Instance :** An Amazon EC2 instance is launched on AWS. This instance provides a scalable and cloud-based environment for executing data processing tasks.
 
-**IAM Role Configuration :** An IAM (Identity and Access Management) role is created and associated with the EC2 instance. This role grants the necessary permissions to access AWS resources, particularly for writing data to an Amazon S3 bucket.
+* **IAM Role Configuration :** An IAM (Identity and Access Management) role is created and associated with the EC2 instance. This role grants the necessary permissions to access AWS resources, particularly for writing data to an Amazon S3 bucket.
 
-**Security Group Setup :** The security group associated with the EC2 instance is configured to enable access, including SSH access, and establish necessary network settings.
+* **Security Group Setup :** The security group associated with the EC2 instance is configured to enable access, including SSH access, and establish necessary network settings.
 
-**SSH Connection :** You connect to the EC2 instance using SSH, gaining remote access to the instance.
+* **SSH Connection :** You connect to the EC2 instance using SSH, gaining remote access to the instance.
 
-**Airflow Installation :** Apache Airflow, a workflow orchestration tool, is installed on the EC2 instance. Airflow is essential for defining, scheduling, and executing ETL workflows.
+* **Airflow Installation :** Apache Airflow, a workflow orchestration tool, is installed on the EC2 instance. Airflow is essential for defining, scheduling, and executing ETL workflows.
 
-**DAG Creation :** A Directed Acyclic Graph (DAG) is created in Apache Airflow to represent the ETL workflow. The DAG defines the sequence of tasks, including data transformation and loading.
+* **DAG Creation :** A Directed Acyclic Graph (DAG) is created in Apache Airflow to represent the ETL workflow. The DAG defines the sequence of tasks, including data transformation and loading.
 
-**Running the ETL Workflow :** The Apache Airflow scheduler is started, which triggers the ETL workflow, executing data transformation and loading tasks.
+* **Running the ETL Workflow :** The Apache Airflow scheduler is started, which triggers the ETL workflow, executing data transformation and loading tasks.
 
 ### Data Storage in Amazon S3
-**Storing Transformed Data in Amazon S3 :** The final step of the ETL pipeline involves storing the processed data in an Amazon S3 bucket. Amazon S3 provides secure, durable, and scalable object storage for the data.
+* **Storing Transformed Data in Amazon S3 :** The final step of the ETL pipeline involves storing the processed data in an Amazon S3 bucket. Amazon S3 provides secure, durable, and scalable object storage for the data.
 
 ## Output Image
    <img src="Images/OutPut.jpg">
